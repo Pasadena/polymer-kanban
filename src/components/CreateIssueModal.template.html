@@ -1,0 +1,50 @@
+<div class="modal-overlay">
+  <div id="modal" class="modal-dialog">
+    <div class="modal-header">
+      <h3>Create Issue</h3>
+    </div>
+    <div id="modal-content" class="modal-content">
+      <div class="input-container">
+        <label for="nameField">Issue name: </label>
+        <input id="nameField" value="{{issueName::input}}" />
+      </div>
+      <paper-input label="Issue name:"></paper-input>
+    </div>
+    <div class="modal-footer">
+      <button class="button-primary" onClick="[[createIssue]]">Create</button>
+    </div>
+  </div>
+  <style>
+    .modal-dialog {
+      margin: 12px;
+      padding: 12px;
+      width: 25%;
+    }
+
+    .modal-header {
+      padding: 6p;
+    }
+
+    .modal-content {
+      padding: 6px;
+    }
+
+    .modal-footer {
+      padding: 6px;
+    }
+
+    .button-primary {
+      color: white;
+      background-color: blue;
+      border-radius: 2px;
+      padding: 6px;
+      font-size: 1.1em;
+      font-weight: 600;
+    }
+    .button-primary:hover {
+      cursor: pointer;
+      background-color: lightblue;
+      color: black;
+    }
+  </style>
+</div>

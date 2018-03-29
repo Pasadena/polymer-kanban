@@ -1,0 +1,56 @@
+<div class="app-layout">
+  <div class="app-header">
+    This is placeholder for header1
+  </div>
+  <div class="app-content">
+    <!--<template is="dom-if" if="{{issueDialogOpen}}">
+
+    </template>
+    <create-issue-button onClick="{{createIssueClicked}}"></create-issue-button>
+  -->
+    <create-issue-modal id="createIssueDialog" visible={{issueDialogOpen}} on-issue-created="handleNewIssue"></create-issue-dialog></create-issue-modal>
+    <kanban-board id="issueBoard"></kanban-board>
+    <div>
+      <label for="val">Value:</label>
+      <input id="val" value="{{val::input}}" />
+      <p>
+        [[val]]
+      </p>
+    </div>
+  </div>
+  <div class="app-footer">
+    This is placeholder for footer
+  </div>
+</div>
+<style>
+  .app-layout {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .app-header {
+    height: 10vh;
+    width: 100%;
+    text-align: center;
+  }
+
+  .app-content {
+    height: 80vh;
+    width: 100%;
+    overflow: auto;
+  }
+
+  .app-footer {
+    width: 100%;
+    text-align: center;
+  }
+
+  .board-wrapper {
+    height: 100%;
+    overflow: auto;
+  }
+</style>
