@@ -20,13 +20,17 @@ export class CreateIssueModal extends PolymerElement {
   constructor() {
     super();
     this.createIssue = this.createIssue.bind(this);
-    console.log(this);
+    this.clearInput = this.clearInput.bind(this);
   }
 
   createIssue() {
     const event = new CustomEvent('issue-created', { detail: { issueName: this.issueName }});
-    console.log(this.issueName);
     this.dispatchEvent(event);
+    this.clearInput();
+  }
+
+  clearInput() {
+    this.issueName = "";
   }
 
   static get template() {
