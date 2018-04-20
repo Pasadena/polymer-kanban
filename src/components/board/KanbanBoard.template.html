@@ -3,19 +3,25 @@
     <div class="column-title">
       TODO
     </div>
-    <template is="dom-repeat" items="{{items}}">
-      <div>[[item.name]]</div>
+    <template is="dom-repeat" items="{{openIssues}}">
+      <board-item item=[[item]] on-item-state-changed="updateBoard"></board-item>
     </template>
   </div>
   <div class="board-column">
     <div class="column-title">
       In Progress
     </div>
+    <template is="dom-repeat" items="{{inProgressIssues}}">
+      <board-item item=[[item]] on-item-state-changed="updateBoard"></board-item>
+    </template>
   </div>
   <div class="board-column">
     <div class="column-title">
       Done
     </div>
+    <template is="dom-repeat" items="{{completedIssues}}">
+      <board-item item=[[item]] on-item-state-changed="updateBoard"></board-item>
+    </template>
   </div>
 </div>
 <style>

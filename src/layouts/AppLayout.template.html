@@ -8,15 +8,8 @@
     </template>
     <create-issue-button onClick="{{createIssueClicked}}"></create-issue-button>
   -->
-    <create-issue-modal id="createIssueDialog" visible={{issueDialogOpen}} on-issue-created="handleNewIssue"></create-issue-dialog></create-issue-modal>
+    <create-issue-modal id="createIssueDialog" visible={{issueDialogOpen}} on-issue-created="handleNewIssue"></create-issue-modal>
     <kanban-board id="issueBoard"></kanban-board>
-    <div>
-      <label for="val">Value:</label>
-      <input id="val" value="{{val::input}}" />
-      <p>
-        [[val]]
-      </p>
-    </div>
   </div>
   <div class="app-footer">
     This is placeholder for footer

@@ -5,11 +5,13 @@ import '@polymer/polymer/lib/elements/dom-if';
 import { KanbanBoard } from '../components/board/KanbanBoard.js';
 import { CreateIssueButton } from '../components/CreateIssueButton.js';
 import { CreateIssueModal } from '../components/CreateIssueModal.js';
+import { BoardItem } from '../components/board/BoardItem.js';
 import * as template from './AppLayout.template.html';
 
 customElements.define('kanban-board', KanbanBoard);
 customElements.define('create-issue-button', CreateIssueButton);
 customElements.define('create-issue-modal', CreateIssueModal);
+customElements.define('board-item', BoardItem);
 
 export class AppLayout extends PolymerElement {
 
