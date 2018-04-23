@@ -1,11 +1,7 @@
 import { Element as PolymerElement } from '@polymer/polymer/polymer-element.js';
 import '@polymer/polymer/polymer.js';
+import { getNextStateFor, Directions } from '../../utils/states.js';
 import * as template from './BoardItem.template.html';
-
-const Directions = {
-  FORWARD: 'forward',
-  BACK: 'back',
-}
 
 export class BoardItem extends PolymerElement {
 
@@ -16,7 +12,6 @@ export class BoardItem extends PolymerElement {
     this.moveToPreviousState = this.moveToPreviousState.bind(this);
     this.moveToNextState = this.moveToNextState.bind(this);
     this._dispatchStateChangeEvent = this._dispatchStateChangeEvent.bind(this);
-    this._getNextState = this._getNextState.bind(this);
   }
 
   static get is() {
@@ -44,12 +39,12 @@ export class BoardItem extends PolymerElement {
   }
 
   moveToPreviousState() {
-    this.item.status = this._getNextState(this.item, Directions.BACK);
+    this.item.status = getNextStateFor(this.item, Directions.BACK);
     this._dispatchStateChangeEvent(Directions.BACK);
   }
 
   moveToNextState() {
-    this.item.status = this._getNextState(this.item, Directions.FORWARD);
+    this.item.status = getNextStateFor(this.item, Directions.FORWARD);
     this._dispatchStateChangeEvent(Directions.FORWARD);
   }
 
@@ -62,21 +57,4 @@ export class BoardItem extends PolymerElement {
     });
     this.dispatchEvent(event);
   };
-
-  _getNextState(item, direction) {
-    switch(item.status) {
-      case 'Todo': {
-        return 'In Progress';
-      }
-      case 'In Progress': {
-        return direction === Directions.FORWARD ? 'Done' : 'Todo';
-      }
-      case 'Done': {
-        return 'In Progress';
-      }
-      default: {
-        return item.status;
-      }
-    }
-  }
 }
