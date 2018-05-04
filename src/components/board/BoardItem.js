@@ -1,5 +1,6 @@
 import { Element as PolymerElement } from '@polymer/polymer/polymer-element.js';
 import '@polymer/polymer/polymer.js';
+import '@polymer/polymer/lib/elements/dom-if';
 import { getNextStateFor, Directions } from '../../utils/states.js';
 import * as template from './BoardItem.template.html';
 
@@ -7,8 +8,8 @@ export class BoardItem extends PolymerElement {
 
   constructor() {
     super();
-    this._isLeftArrowEnabled = this._isLeftArrowEnabled.bind(this);
-    this._isRightArrowEnabled = this._isRightArrowEnabled.bind(this);
+    this.isLeftArrowEnabled = this.isLeftArrowEnabled.bind(this);
+    this.isRightArrowEnabled = this.isRightArrowEnabled.bind(this);
     this.moveToPreviousState = this.moveToPreviousState.bind(this);
     this.moveToNextState = this.moveToNextState.bind(this);
     this._dispatchStateChangeEvent = this._dispatchStateChangeEvent.bind(this);
@@ -30,12 +31,12 @@ export class BoardItem extends PolymerElement {
     }
   }
 
-  _isLeftArrowEnabled() {
-    this.item.status !== 'TODO';
+  isLeftArrowEnabled() {
+    return this.item.status !== 'Todo';
   }
 
-  _isRightArrowEnabled() {
-    this.item.status !== 'Done';
+  isRightArrowEnabled() {
+    return this.item.status !== 'Done';
   }
 
   moveToPreviousState() {
