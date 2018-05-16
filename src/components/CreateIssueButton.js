@@ -1,4 +1,4 @@
-import { Element as PolymerElement } from '@polymer/polymer/polymer-element.js';
+import { PolymerElement } from '@polymer/polymer/polymer-element.js';
 
 export class CreateIssueButton extends PolymerElement {
 

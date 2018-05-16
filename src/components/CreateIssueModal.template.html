@@ -4,11 +4,7 @@
       <h3>Create Issue</h3>
     </div>
     <div id="modal-content" class="modal-content">
-      <div class="input-container">
-        <label for="nameField">Issue name: </label>
-        <input id="nameField" value="{{issueName::input}}" />
-      </div>
-      <paper-input label="Issue name:"></paper-input>
+      <paper-input label="Issue name:" value="{{issueName}}"></paper-input>
     </div>
     <div class="modal-footer">
       <button class="button-primary" onClick="[[createIssue]]">Create</button>

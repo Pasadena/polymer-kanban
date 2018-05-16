@@ -1,7 +1,9 @@
-import { Element as PolymerElement } from '@polymer/polymer/polymer-element.js';
-import '@polymer/polymer/polymer.js';
-import { PropertiesMixin } from '@polymer/polymer/lib/mixins/properties-mixin.js';
+import { PolymerElement } from '@polymer/polymer/polymer-element.js';
+import '@polymer/polymer/polymer-legacy.js';
 import '@polymer/polymer/lib/elements/dom-if';
+//import '@polymer/iron-icons/iron-icons.js';
+import '@polymer/paper-input/paper-input.js';
+
 import { KanbanBoard } from '../components/board/KanbanBoard.js';
 import { CreateIssueButton } from '../components/CreateIssueButton.js';
 import { CreateIssueModal } from '../components/CreateIssueModal.js';
@@ -17,7 +19,7 @@ export class AppLayout extends PolymerElement {
 
   constructor() {
     super();
-    this.issueDialogOpen = false;
+    this.isCreateIssueDialogOpen = this.isCreateIssueDialogOpen.bind(this);
   }
 
   static get template() {
@@ -28,12 +30,17 @@ export class AppLayout extends PolymerElement {
     return {
         issueDialogOpen: {
           type: Boolean,
+          notify: true
         }
     }
   }
 
   createIssueClicked() {
     this.issueDialogOpen = true;
+  }
+
+  isCreateIssueDialogOpen() {
+    return this.issueDialogOpen;
   }
 
   handleNewIssue(issue) {

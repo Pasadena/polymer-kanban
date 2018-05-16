@@ -1,7 +1,9 @@
 <div class="board">
   <div class="board-column">
     <div class="column-title">
-      TODO
+      <span>TODO</span>
+      <iron-icon icon="icons:add"></iron-icon>
+      <paper-icon-button icon="star"></paper-icon-button>
     </div>
     <template is="dom-repeat" items="{{openIssues}}">
       <board-item item=[[item]] on-item-state-changed="updateBoard"></board-item>

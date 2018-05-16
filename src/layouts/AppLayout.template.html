@@ -3,11 +3,10 @@
     This is placeholder for header1
   </div>
   <div class="app-content">
-    <!--<template is="dom-if" if="{{issueDialogOpen}}">
-
+    <!--<template is="dom-if" if="{{isCreateIssueDialogOpen()}}">
+        Foovar
     </template>
-    <create-issue-button onClick="{{createIssueClicked}}"></create-issue-button>
-  -->
+    <create-issue-button onClick="{{createIssueClicked}}"></create-issue-button>-->
     <create-issue-modal id="createIssueDialog" visible={{issueDialogOpen}} on-issue-created="handleNewIssue"></create-issue-modal>
     <kanban-board id="issueBoard"></kanban-board>
   </div>

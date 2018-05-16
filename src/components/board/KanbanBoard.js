@@ -1,5 +1,4 @@
-import { Element as PolymerElement } from '@polymer/polymer/polymer-element.js';
-import '@polymer/polymer/polymer.js';
+import { PolymerElement } from '@polymer/polymer/polymer-element.js';
 import * as template from './KanbanBoard.template.html';
 
 export class KanbanBoard extends PolymerElement {

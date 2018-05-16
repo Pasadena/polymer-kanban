@@ -1,6 +1,4 @@
-import { Element as PolymerElement } from '@polymer/polymer/polymer-element.js';
-import '@polymer/polymer/polymer.js';
-import '@polymer/polymer/lib/elements/dom-if';
+import { PolymerElement } from '@polymer/polymer/polymer-element.js';
 import { getNextStateFor, Directions } from '../../utils/states.js';
 import * as template from './BoardItem.template.html';
 

@@ -1,6 +1,4 @@
-import { Element as PolymerElement } from '@polymer/polymer/polymer-element.js';
-import '@polymer/polymer/lib/elements/dom-if.js';
-import '@polymer/paper-input/paper-input.html'; //TODO revisit this when you can import html / find workaround for that
+import { PolymerElement } from '@polymer/polymer/polymer-element.js';
 import * as template from './CreateIssueModal.template.html';
 
 export class CreateIssueModal extends PolymerElement {
