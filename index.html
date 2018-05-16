@@ -62,6 +62,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 
     <script>
+
+      const _customElementsDefine = window.customElements.define;
+      window.customElements.define = function(name, clazz, config) {
+        if(!customElements.get(name)) {
+          _customElementsDefine.call(window.customElements, name, clazz, config);
+        }
+      }
+
       /**
       * [polymer-root-path]
       *
