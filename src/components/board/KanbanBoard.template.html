@@ -2,8 +2,7 @@
   <div class="board-column">
     <div class="column-title">
       <span>TODO</span>
-      <iron-icon icon="icons:add"></iron-icon>
-      <paper-icon-button icon="star"></paper-icon-button>
+      <paper-icon-button class="add-item-button" icon="add"></paper-icon-button>
     </div>
     <template is="dom-repeat" items="{{openIssues}}">
       <board-item item=[[item]] on-item-state-changed="updateBoard"></board-item>
@@ -11,7 +10,8 @@
   </div>
   <div class="board-column">
     <div class="column-title">
-      In Progress
+      <span>In Progress</span>
+      <paper-icon-button class="add-item-button" icon="add"></paper-icon-button>
     </div>
     <template is="dom-repeat" items="{{inProgressIssues}}">
       <board-item item=[[item]] on-item-state-changed="updateBoard"></board-item>
@@ -19,7 +19,8 @@
   </div>
   <div class="board-column">
     <div class="column-title">
-      Done
+      <span>Done</span>
+      <paper-icon-button class="add-item-button" icon="add"></paper-icon-button>
     </div>
     <template is="dom-repeat" items="{{completedIssues}}">
       <board-item item=[[item]] on-item-state-changed="updateBoard"></board-item>
@@ -48,5 +49,16 @@
     text-align: center;
     font-size: 1.2em;
     font-weight: 500;
+    line-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .add-item-button {
+    color: blue;
+    font-weight: 700;
+  }
+  .add-item-button:hover {
+    color: lightblue;
   }
 </style>
