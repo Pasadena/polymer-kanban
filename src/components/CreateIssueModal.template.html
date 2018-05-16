@@ -1,46 +1,72 @@
 <div class="modal-overlay">
-  <div id="modal" class="modal-dialog">
-    <div class="modal-header">
-      <h3>Create Issue</h3>
+  <template is="dom-if" if="[[visible]]" restamp="true">
+    <div id="modal" class="modal-dialog">
+      <div class="modal-header">
+        <h3>Create Issue</h3>
+      </div>
+      <div id="modal-content" class="modal-content">
+        <paper-input label="Issue name:" value="{{issueName}}"></paper-input>
+      </div>
+      <div class="modal-footer">
+        <button class="button button-primary" onClick="[[createIssue]]">Create</button>
+        <button class="button" onClick="[[closeDialog]]">Close</button>
+      </div>
     </div>
-    <div id="modal-content" class="modal-content">
-      <paper-input label="Issue name:" value="{{issueName}}"></paper-input>
-    </div>
-    <div class="modal-footer">
-      <button class="button-primary" onClick="[[createIssue]]">Create</button>
-    </div>
-  </div>
-  <style>
-    .modal-dialog {
-      margin: 12px;
-      padding: 12px;
-      width: 25%;
-    }
-
-    .modal-header {
-      padding: 6p;
-    }
-
-    .modal-content {
-      padding: 6px;
-    }
-
-    .modal-footer {
-      padding: 6px;
-    }
-
-    .button-primary {
-      color: white;
-      background-color: blue;
-      border-radius: 2px;
-      padding: 6px;
-      font-size: 1.1em;
-      font-weight: 600;
-    }
-    .button-primary:hover {
-      cursor: pointer;
-      background-color: lightblue;
-      color: black;
-    }
-  </style>
+  </template>
 </div>
+<style>
+  .modal-dialog {
+    margin: 12px;
+    padding: 12px;
+    width: 25%;
+    z-index: 99;
+    margin: 0 auto;
+    position: fixed;
+    background-color: white;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .modal-header {
+    padding: 6p;
+  }
+
+  .modal-content {
+    padding: 6px;
+  }
+
+  .modal-footer {
+    padding: 6px;
+  }
+
+  .button {
+    border-radius: 2px;
+    padding: 6px;
+    font-size: 1.1em;
+    font-weight: 600;
+  }
+
+  .button-primary {
+    color: white;
+    background-color: blue;
+  }
+
+  .button:hover {
+    cursor: pointer;
+  }
+
+  .button-primary:hover {
+    background-color: lightblue;
+    color: black;
+  }
+
+  .visible {
+    visibility: visible;
+  }
+  .hidden {
+    visibility: hidden;
+  }
+</style>
+

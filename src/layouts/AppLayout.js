@@ -20,28 +20,14 @@ export class AppLayout extends PolymerElement {
 
   constructor() {
     super();
-    this.isCreateIssueDialogOpen = this.isCreateIssueDialogOpen.bind(this);
   }
 
   static get template() {
     return template;
   }
 
-  static get properties() {
-    return {
-        issueDialogOpen: {
-          type: Boolean,
-          notify: true
-        }
-    }
-  }
-
   createIssueClicked() {
-    this.issueDialogOpen = true;
-  }
-
-  isCreateIssueDialogOpen() {
-    return this.issueDialogOpen;
+    this.$.createIssueDialog.show();
   }
 
   handleNewIssue(issue) {

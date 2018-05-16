@@ -2,7 +2,7 @@
   <div class="board-column">
     <div class="column-title">
       <span>TODO</span>
-      <paper-icon-button class="add-item-button" icon="add"></paper-icon-button>
+      <paper-icon-button class="add-item-button" icon="add" on-click="openAddDialog"></paper-icon-button>
     </div>
     <template is="dom-repeat" items="{{openIssues}}">
       <board-item item=[[item]] on-item-state-changed="updateBoard"></board-item>

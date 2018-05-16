@@ -95,4 +95,10 @@ export class KanbanBoard extends PolymerElement {
       }
     }
   }
+
+  openAddDialog() {
+    console.log("foobar");
+    const event = new CustomEvent('dialog-opened', {});
+    this.dispatchEvent(event);
+  }
 }
